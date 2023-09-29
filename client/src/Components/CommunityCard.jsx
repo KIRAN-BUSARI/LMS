@@ -6,7 +6,7 @@ const CommunityCard = ({ data }) => {
 
     return (
         <div
-            onClick={() => navigate("/communities/description", { state: { ...data } })}
+            onClick={() => navigate("/community/description", { state: { ...data } })}
             className="text-white w-[22rem] h-[430px] shadow-lg rounded-lg cursor-pointer group overflow-hidden bg-zinc-700"
         >
             <div className="overflow-hidden">
@@ -22,6 +22,10 @@ const CommunityCard = ({ data }) => {
                 <h2 className="text-xl font-bold text-yellow-500 line-clamp-2">
                     {data?.title}
                 </h2>
+                <p className="font-semibold">
+                    <span className="text-yellow-500 font-bold">Category : </span>
+                    {data?.category}
+                </p>
                 <p className="line-clamp-2">{data?.description}</p>
             </div>
         </div>

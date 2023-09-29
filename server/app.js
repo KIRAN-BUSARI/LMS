@@ -31,7 +31,7 @@ import communityRoutes from './routes/communityRoutes.js';
 app.use('/api/v1/user', userRoutes);
 app.use('/api/v1/courses', courseRoutes);
 app.use('/api/v1/payments', paymentRoutes);
-app.use('/api/v1/community', communityRoutes);
+app.use('/api/v1/communities', communityRoutes);
 app.use('/api/v1', otherRoutes);
 
 app.all('*', (_req, res) => {

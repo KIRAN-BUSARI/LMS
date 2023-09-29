@@ -99,6 +99,15 @@ const AdminDashboard = () => {
     }
   };
 
+  useEffect(() => {
+    (async () => {
+      await dispatch(getAllCourses());
+      await dispatch(getStatsData());
+      await dispatch(getPaymentRecord());
+      // await dispatch(getAllCommunities());
+    })();
+  }, []);
+
   const myCommunities = useSelector((state) => state.community.communitiesData);
 
   // function to handle the course delete
@@ -113,13 +122,7 @@ const AdminDashboard = () => {
     }
   };
 
-  useEffect(() => {
-    (async () => {
-      await dispatch(getAllCourses());
-      await dispatch(getStatsData());
-      await dispatch(getPaymentRecord());
-    })();
-  }, []);
+
 
   useEffect(() => {
     (async () => {
@@ -292,6 +295,111 @@ const AdminDashboard = () => {
                       <button
                         onClick={() =>
                           navigate("/course/displaylectures", {
+                            state: { ...element },
+                          })
+                        }
+                        className="bg-green-500 hover:bg-green-600 transition-all ease-in-out duration-30 text-xl py-2 px-4 rounded-md font-bold"
+                      >
+                        <BsCollectionPlayFill />
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="mx-[10%] w-[80%] self-center flex flex-col items-center justify-center gap-10 mb-10">
+          <div className="flex w-full items-center justify-between">
+            <h1 className="text-center text-3xl font-semibold">
+              Join Communities You <span className="text-yellow-500">Love...</span>
+            </h1>
+
+            {/* add course card */}
+            <button
+              onClick={() => {
+                navigate("/community/create", {
+                  state: {
+                    initialCommunitiesData: {
+                      newCommunity: true,
+                      title: "",
+                      category: "",
+                      description: "",
+                      thumbnail: undefined,
+                      previewImage: "",
+                    },
+                  },
+                });
+              }}
+              className="w-fit bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 rounded py-2 px-4 font-semibold text-lg cursor-pointer"
+            >
+              Create New Community
+            </button>
+          </div>
+
+          <table className="table overflow-x-scroll">
+            <thead>
+              <tr>
+                <th>S No.</th>
+                <th>Community Title</th>
+                <th>Community Category</th>
+                <th>Community Description</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {myCommunities?.map((element, index1) => {
+                return (
+                  <tr key={element?._id}>
+                    <td>{index1 + 1}</td>
+                    <td>
+                      <textarea
+                        readOnly
+                        className="w-40 h-auto bg-transparent resize-none"
+                        value={element?.title}
+                      ></textarea>
+                    </td>
+                    <td>{element?.category}</td>
+                    <td className="max-w-28 overflow-hidden text-ellipsis whitespace-nowrap">
+                      <textarea
+                        readOnly
+                        className="w-80 h-auto bg-transparent resize-none"
+                        value={element?.description}
+                      ></textarea>
+                    </td>
+
+                    <td className="flex items-center gap-4">
+                      {/* to edit the Community */}
+                      <button
+                        onClick={() =>
+                          navigate("/community/create", {
+                            state: {
+                              initialCommunitiesData: {
+                                newCommunity: false,
+                                ...element,
+                              },
+                            },
+                          })
+                        }
+                        className="bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 text-xl py-2 px-4 rounded-md font-bold"
+                      >
+                        <MdOutlineModeEdit />
+                      </button>
+
+                      {/* to delete the Community */}
+                      <button
+                        onClick={() => handleCommunityDelete(element._id)}
+                        className="bg-red-500 hover:bg-red-600 transition-all ease-in-out duration-30 text-xl py-2 px-4 rounded-md font-bold"
+                      >
+                        <BsTrash />
+                      </button>
+
+                      {/* to CRUD the lectures */}
+                      <button
+                        onClick={() =>
+                          navigate("/community/displaycommunities", {
                             state: { ...element },
                           })
                         }

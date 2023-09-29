@@ -2,7 +2,7 @@ import { model, Schema } from 'mongoose';
 
 const communitySchema = new Schema(
     {
-        name: {
+        title: {
             type: String,
             required: [true, 'Title is required'],
             minlength: [8, 'Title must be atleast 8 characters'],
@@ -13,6 +13,10 @@ const communitySchema = new Schema(
             type: String,
             required: [true, 'Description is required'],
             minlength: [20, 'Description must be atleast 20 characters long'],
+        },
+        category: {
+            type: String,
+            required: [true, 'Category is required'],
         },
         thumbnail: {
             public_id: {

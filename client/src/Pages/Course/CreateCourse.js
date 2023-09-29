@@ -153,7 +153,7 @@ const CreateCourse = () => {
                     <img
                       className="w-full h-44 m-auto border"
                       src={userInput.previewImage}
-                      alt="preview image"
+                      alt="preview_image"
                     />
                   ) : (
                     <div className="w-full h-44 m-auto flex items-center justify-center border">

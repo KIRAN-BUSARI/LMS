@@ -1,10 +1,25 @@
-import express from 'express';
-const Router = express.Router();
-import { authorizeRoles, authorizedSubscribers, isLoggedIn } from '../middlewares/authMiddleware.js';
-import { exitCommunity, getAllCommunities, joinCommunity, createCommunity, updateCommunity, deleteCommunity } from '../controllers/communityController.js';
-import upload from '../middlewares/multerMiddleware.js';
+import { Router } from 'express';
 
-Router
+import {
+    authorizeRoles,
+    authorizedSubscribers,
+    isLoggedIn
+} from '../middlewares/authMiddleware.js';
+import {
+    addCommunitiesToCommunityById,
+    createCommunity,
+    deleteCommunityById,
+    getAllCommunities,
+    getCommunitiesByCommunityId,
+    removeCommunityFromCommunities,
+    updateCommunityById,
+} from '../controllers/communityController.js';
+import upload from '../middlewares/multerMiddleware.js';
+// import { updateCommunity } from '../../client/src/Redux/communitySlice.js';
+
+const router = Router();
+
+router
     .route('/')
     .get(getAllCommunities)
     .post(
@@ -13,14 +28,20 @@ Router
         upload.single('thumbnail'),
         createCommunity
     )
+    .delete(isLoggedIn, authorizeRoles('ADMIN'), removeCommunityFromCommunities)
+router
+    .route('/:Id')
+    .get(isLoggedIn, authorizedSubscribers, getCommunitiesByCommunityId)
+    .post(
+        isLoggedIn,
+        authorizeRoles('ADMIN'),
+        upload.single('communities'),
+        addCommunitiesToCommunityById
+    )
+    .put(isLoggedIn, authorizeRoles('ADMIN'), updateCommunityById)
+    .delete(isLoggedIn, authorizeRoles('ADMIN'), deleteCommunityById)
+// .delete(isLoggedIn, exitCommunity)
 
-Router
-    .route('/:communityId')
-    .post(isLoggedIn, authorizedSubscribers, joinCommunity)
-    .put(isLoggedIn, authorizeRoles('ADMIN'), updateCommunity)
-    .delete(isLoggedIn, authorizeRoles('ADMIN'), deleteCommunity)
-    .delete(isLoggedIn, exitCommunity)
 
 
-
-export default Router;
+export default router;

@@ -11,19 +11,18 @@ const CreateCommunity = () => {
     const navigate = useNavigate();
 
     // for getting the data from location of previous component
-    const { initialCommunityData } = useLocation().state;
+    const { initialCommunitiesData } = useLocation().state;
 
     // for toggling disable of image input box
-    const [isDisabled, setIsDisabled] = useState(!initialCommunityData?.newCommunity);
+    const [isDisabled, setIsDisabled] = useState(!initialCommunitiesData?.newCommunity);
 
     // for storing the user input
     const [userInput, setUserInput] = useState({
-        title: initialCommunityData?.title,
-        description: initialCommunityData?.description,
-        createdBy: initialCommunityData?.createdBy,
-        category: initialCommunityData?.category,
+        title: initialCommunitiesData?.title,
+        description: initialCommunitiesData?.description,
+        category: initialCommunitiesData?.category,
         thumbnail: null,
-        previewImage: initialCommunityData?.thumbnail?.secure_url,
+        previewImage: initialCommunitiesData?.thumbnail?.secure_url,
     });
 
     // function to handle the image upload
@@ -64,12 +63,13 @@ const CreateCommunity = () => {
         let res = undefined;
 
         // for creating a new course
-        if (initialCommunityData.newCommunity) {
+        if (initialCommunitiesData.newCommunity) {
             //   checking for the empty fields
             console.log(userInput);
             if (
                 !userInput.title ||
                 !userInput.description ||
+                !userInput.category ||
                 !userInput.thumbnail
             ) {
                 toast.error("All fields are mandatory");
@@ -85,13 +85,14 @@ const CreateCommunity = () => {
             if (
                 !userInput.title ||
                 !userInput.description ||
+                !userInput.category ||
                 !userInput.thumbnail
             ) {
                 toast.error("All fields are mandatory");
                 return;
             }
 
-            const data = { ...userInput, id: initialCommunityData._id };
+            const data = { ...userInput, id: initialCommunitiesData._id };
             // calling the api
             res = await dispatch(updateCommunity(data));
         }
@@ -101,7 +102,6 @@ const CreateCommunity = () => {
             setUserInput({
                 title: "",
                 description: "",
-                createdBy: "",
                 category: "",
                 thumbnail: undefined,
                 previewImage: "",
@@ -130,8 +130,8 @@ const CreateCommunity = () => {
                     </Link>
 
                     <h1 className="text-center text-2xl font-bold">
-                        {!initialCommunityData.newCommunity ? "Update" : "Create new"}{" "}
-                        <span>Communities</span>
+                        {!initialCommunitiesData.newCommunity ? "Update" : "Create new"}{" "}
+                        <span>Community</span>
                     </h1>
 
                     <main className="grid grid-cols-2 gap-x-10">
@@ -139,7 +139,7 @@ const CreateCommunity = () => {
                         <div className="space-y-6">
                             <div
                                 onClick={() =>
-                                    !initialCommunityData.newCommunity
+                                    !initialCommunitiesData.newCommunity
                                         ? toast.error("Cannot update thumbnail image")
                                         : ""
                                 }
@@ -193,23 +193,6 @@ const CreateCommunity = () => {
 
                         {/* adding the course description */}
                         <div className="flex flex-col gap-1">
-                            {/* adding the instructor */}
-                            <div className="flex flex-col gap-1">
-                                <label className="text-lg font-semibold" htmlFor="createdBy">
-                                    Community Head Name
-                                </label>
-                                <input
-                                    required
-                                    type="name"
-                                    name="createdBy"
-                                    id="createdBy"
-                                    placeholder="Enter the instructure name"
-                                    className="bg-transparent px-2 py-1 border"
-                                    value={userInput.createdBy}
-                                    onChange={handleUserInput}
-                                />
-                            </div>
-
                             {/* adding the category */}
                             <div className="flex flex-col gap-1">
                                 <label className="text-lg font-semibold" htmlFor="category">
@@ -249,7 +232,7 @@ const CreateCommunity = () => {
                         className="w-full bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold text-lg cursor-pointer"
                         type="submit"
                     >
-                        {!initialCommunityData.newCommunity ? "Update Community" : "Create Community"}
+                        {!initialCommunitiesData.newCommunity ? "Update Community" : "Create Community"}
                     </button>
                 </form>
             </div>

@@ -28,39 +28,24 @@ const CourseDescription = () => {
                         />
                         {/* course details */}
                         <div className="space-y-4">
-                            <div className="flex items-center justify-between text-xl">
-                                <p className="font-semibold">
-                                    <span className="text-yellow-500 font-bold">
-                                        Total Lectures :{" "}
-                                    </span>
-                                    {state.numberOfLectures}
-                                </p>
-                                <p className="font-semibold">
-                                    <span className="text-yellow-500 font-bold">
-                                        Instructor :{" "}
-                                    </span>
-                                    {state.createdBy}
-                                </p>
-                            </div>
-
                             {/* adding the subscribe button */}
-                            {role === "ADMIN" && data?.subscription?.status === "active" ? (
+                            {role === "ADMIN" || data?.subscription?.status === "active" ? (
                                 <div className="block">
                                     <button
-                                        onClick={() => navigate("/course/displaylectures", {
+                                        onClick={() => navigate("/community/displaycommunities", {
                                             state: { ...state },
                                         })}
-                                        className="bg-yellow-600 text-xl rounded-md font-bold px-4 py-2 w-[45%] mr-1 hover:bg-yellow-500 transition-all ease-in-out duration-300">Watch Lectures</button>
-                                    <button onClick={() => navigate('/live', {
+                                        className="bg-yellow-600 text-xl rounded-md font-bold px-4 py-2 w-full mr-1 hover:bg-yellow-500 transition-all ease-in-out duration-300">Watch Communities</button>
+                                    {/* <button onClick={() => navigate('/live', {
                                         state: { ...state },
                                     })}
                                         className="bg-yellow-600 text-xl rounded-md font-bold px-4 py-2 w-[45%] hover:bg-yellow-500 transition-all ease-in-out duration-300"
-                                    >Start Class</button>
+                                    >Start Class</button> */}
                                 </div>
                             ) : (
                                 <button
                                     onClick={() => navigate("/checkout")}
-                                    className="bg-yellow-600 text-xl rounded-md font-bold px-4 py-2 w-full mr-1 hover:bg-yellow-500 transition-all ease-in-out duration-300">Subscribe to Course</button>
+                                    className="bg-yellow-600 text-xl rounded-md font-bold px-4 py-2 w-full mr-1 hover:bg-yellow-500 transition-all ease-in-out duration-300">Join the Community</button>
                             )}
                         </div>
                     </div>
@@ -71,7 +56,7 @@ const CourseDescription = () => {
                             {state.title}
                         </h1>
 
-                        <p className="text-yellow-500 font-bold">Course Description :</p>
+                        <p className="text-yellow-500 font-bold">Community Description :</p>
 
                         <p>{state.description}</p>
                     </div>

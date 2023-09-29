@@ -8,6 +8,7 @@ import {
     removeLectureFromCourse,
     updateCourseById,
 } from '../controllers/courseController.js';
+
 import {
     authorizeRoles,
     authorizedSubscribers,

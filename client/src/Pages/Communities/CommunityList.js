@@ -6,7 +6,7 @@ import { getAllCommunities } from "../../Redux/communitySlice";
 
 const CommunityList = () => {
     const dispatch = useDispatch();
-    const { communitieData } = useSelector((state) => state.community);
+    const { communitiesData } = useSelector((state) => state.community);
 
     useEffect(() => {
         (async () => {
@@ -26,7 +26,7 @@ const CommunityList = () => {
 
                 {/* wrapper for courses card */}
                 <div className="mb-10 flex flex-wrap gap-14">
-                    {communitieData?.map((element) => {
+                    {communitiesData?.map((element) => {
                         return <CommunityCard key={element._id} data={element} />;
                     })}
                 </div>

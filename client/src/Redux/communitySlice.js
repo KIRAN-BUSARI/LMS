@@ -30,12 +30,11 @@ export const createNewCommunity = createAsyncThunk("/get/communities",
             // creating the form data from user data
             let formData = new FormData();
             formData.append("title", data?.title);
-            // formData.append("createdBy", data?.createdBy);
-            // formData.append("category", data?.category);
+            formData.append("category", data?.category);
             formData.append("description", data?.description);
             formData.append("thumbnail", data?.thumbnail);
 
-            const res = axiosInstance.post("/communities/create", formData);
+            const res = axiosInstance.post("/communities", formData);
 
             toast.promise(res, {
                 loading: "Creating the Comunity...",
@@ -74,8 +73,7 @@ export const updateCommunity = createAsyncThunk("/community/update", async (data
         // creating the form data from user data
         const formData = new FormData();
         formData.append("title", data.title);
-        // formData.append("createdBy", data.createdBy);
-        // formData.append("category", data.category);
+        formData.append("category", data.category);
         formData.append("description", data.description);
         // backend is not allowing change of thumbnail
         if (data.thumbnail) {
@@ -84,8 +82,7 @@ export const updateCommunity = createAsyncThunk("/community/update", async (data
 
         const res = axiosInstance.put(`/communities/${data.id}`, {
             title: data.title,
-            // category: data.category,
-            // createdBy: data.createdBy,
+            category: data.category,
             description: data.description,
         });
 
