@@ -227,7 +227,9 @@ export const deleteCourseById = asyncHandler(async (req, res, next) => {
         return next(new AppError('Course with given id does not exist.', 404));
     }
 
-    await course.remove();
+    // await course.remove(); It will not work
+    await course.deleteOne();
+
 
     res.status(200).json({
         success: true,
