@@ -18,10 +18,10 @@ const CommunityList = () => {
     return (
         <Layout>
             {/* Community container for displaying the cards */}
-            <div className="min-h-[90vh] pt-12 pl-20 flex flex-col flex-wrap gap-10 text-white">
+            <div className="min-h-[90vh] pt-12 pl-20 flex flex-col flex-wrap gap-10 text-[#0095ff]">
                 <h1 className="text-center text-3xl font-semibold">
                     Join the communities made for{" "}
-                    <span className="font-bold text-yellow-500">YOU.!</span>
+                    <span className="font-bold text-[#ff7070]">YOU.!</span>
                 </h1>
 
                 {/* wrapper for courses card */}

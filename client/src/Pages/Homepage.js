@@ -2,18 +2,20 @@ import React from "react";
 import Layout from "../Layout/Layout";
 import homePageMainImage from "../Assets/Images/homePageMainImage.png";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const Homepage = () => {
   return (
     <Layout>
+      {/* <Navbar/> */}
       <div className="pt-10 text-white flex items-center justify-center gap-10 mx-16 h-[90vh]">
         {/* for platform details */}
         <div className="w-1/2 space-y-6">
-          <h1 className="text-5xl font-semibold">
+          <h1 className="text-5xl font-semibold text-[#ff7070]">
             Find out best{" "}
-            <span className="text-yellow-500 font-bold">Online Courses</span>
+            <span className="text-[#0095ff] font-bold">Online Courses</span>
           </h1>
-          <p className="text-xl text-gray-200">
+          <p className="text-xl text-[#0095ff]">
             We have a large library of courses taught by highly skilled and
             qualified faculities at a very affordable cost.
           </p>
@@ -21,12 +23,12 @@ const Homepage = () => {
           {/* for buttons */}
           <div className="space-x-6">
             <Link to={"/courses"}>
-              <button className="bg-yellow-500 px-5 py-3 rounded-md font-semibold text-lg cursor-pointer hover:bg-yellow-600 transition-all ease-in-out duration-300">
+              <button className="bg-[#0095ff] text-white border px-5 py-3 rounded-md font-semibold text-lg cursor-pointer hover:border-[#0095ff] hover:bg-white hover:text-[#0095ff] transition-all ease-in-out duration-300">
                 Explore Courses
               </button>
             </Link>
             <Link to={"/contact"}>
-              <button className="border border-yellow-500 px-5 py-3 rounded-md font-semibold text-lg cursor-pointer hover:border-yellow-600 transition-all ease-in-out duration-300">
+              <button className="border bg-[#0095ff] px-5 py-3 rounded-md font-semibold text-lg cursor-pointer hover:border-[#0095ff] hover:bg-white hover:text-[#0095ff] transition-all ease-in-out duration-300">
                 Contact Us
               </button>
             </Link>
@@ -35,7 +37,7 @@ const Homepage = () => {
 
         {/* right section for image */}
         <div className="w-1/2 flex items-center justify-center">
-          <img src={homePageMainImage} alt="home page image" />
+          <img src={homePageMainImage} alt="home page img" />
         </div>
       </div>
     </Layout>

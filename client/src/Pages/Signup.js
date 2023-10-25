@@ -189,15 +189,15 @@ const Signup = () => {
       <div className="flex items-center justify-center h-[100vh]">
         <form
           onSubmit={createNewAccount}
-          className="flex flex-col justify-center gap-3 rounded-lg p-4 text-white w-96 shadow-[0_0_10px_black]"
+          className="flex flex-col justify-center gap-3 rounded-lg p-4 w-96 shadow-[0_0_10px_black]"
         >
-          <h1 className="text-center text-2xl font-bold">Registration Page</h1>
+          <h1 className="text-center text-2xl font-bold text-[#0095ff]">Registration Page</h1>
 
           {/* input for image file */}
           <label className="cursor-pointer" htmlFor="image_uploads">
             {previewImage ? (
               <img
-                className="w-24 h-24 rounded-full m-auto"
+                className="w-24 h-24 rounded-full m-auto text-transparent"
                 src={previewImage}
                 alt="preview_image"
               />
@@ -216,7 +216,7 @@ const Signup = () => {
 
           {/* input for name */}
           <div className="flex flex-col gap-1">
-            <label className="font-semibold" htmlFor="fullName">
+            <label className="font-semibold text-[#0095ff]" htmlFor="fullName">
               Name
             </label>
             <input
@@ -225,7 +225,7 @@ const Signup = () => {
               name="fullName"
               id="fullName"
               placeholder="Enter your name"
-              className="bg-transparent px-2 py-1 border"
+              className="bg-transparent px-2 py-1 border text-black"
               value={signupData.fullName}
               onChange={handleUserInput}
             />
@@ -233,7 +233,7 @@ const Signup = () => {
 
           {/* input for email */}
           <div className="flex flex-col gap-1">
-            <label className="font-semibold" htmlFor="email">
+            <label className="font-semibold text-[#0095ff]" htmlFor="email">
               Email
             </label>
             <input
@@ -242,7 +242,7 @@ const Signup = () => {
               name="email"
               id="email"
               placeholder="Enter your email"
-              className="bg-transparent px-2 py-1 border"
+              className="bg-transparent px-2 py-1 border text-black"
               value={signupData.email}
               onChange={handleUserInput}
             />
@@ -250,7 +250,7 @@ const Signup = () => {
 
           {/* input for password */}
           <div className="flex flex-col gap-1">
-            <label className="font-semibold" htmlFor="password">
+            <label className="font-semibold text-[#0095ff]" htmlFor="password">
               Password
             </label>
             <input
@@ -259,7 +259,7 @@ const Signup = () => {
               name="password"
               id="password"
               placeholder="Enter your password"
-              className="bg-transparent px-2 py-1 border"
+              className="bg-transparent px-2 py-1 border text-black"
               value={signupData.password}
               onChange={handleUserInput}
             />
@@ -267,7 +267,7 @@ const Signup = () => {
 
           {/* registration button */}
           <button
-            className="w-full bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold text-lg cursor-pointer"
+            className="w-full bg-[#0095ff] text-white hover:bg-[#fff] hover:border hover:border-[#0095ff] hover:text-[#0095ff] transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold text-lg cursor-pointer"
             type="submit"
           >
             Create Account
@@ -275,7 +275,7 @@ const Signup = () => {
 
           <p className="text-center">
             Already have an account ?{" "}
-            <Link to={"/login"} className="link text-accent cursor-pointer">
+            <Link to={"/login"} className="link text-[#0095ff] cursor-pointer">
               Login
             </Link>
           </p>

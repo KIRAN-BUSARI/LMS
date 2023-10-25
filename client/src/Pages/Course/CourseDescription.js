@@ -62,6 +62,31 @@ const CourseDescription = () => {
                   onClick={() => navigate("/checkout")}
                   className="bg-yellow-600 text-xl rounded-md font-bold px-4 py-2 w-full mr-1 hover:bg-yellow-500 transition-all ease-in-out duration-300">Subscribe to Course</button>
               )}
+
+              {/* {role === "USER" && data?.subscription?.status === "active" ? (
+                <div className="block">
+                  <button
+                    onClick={() => navigate("/course/displaylectures", {
+                      state: { ...state },
+                    })}
+                    className="bg-yellow-600 text-xl rounded-md font-bold px-4 py-2 w-[45%] mr-1 hover:bg-yellow-500 transition-all ease-in-out duration-300">Start Learning</button>
+                  <button onClick={() => navigate('/live', {
+                    state: { ...state },
+                  })}
+                    className="bg-yellow-600 text-xl rounded-md font-bold px-4 py-2 w-[45%] hover:bg-yellow-500 transition-all ease-in-out duration-300"
+                  >Join Class</button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => navigate("/checkout")}
+                  className="bg-yellow-600 text-xl rounded-md font-bold px-4 py-2 w-full mr-1 hover:bg-yellow-500 transition-all ease-in-out duration-300">Subscribe to Course</button>
+              )} */}
+
+              {/* {role === "USER" && data?.subscription?.status === "active" ? (
+                
+              ): (
+                  
+              )} */}
             </div>
           </div>
 

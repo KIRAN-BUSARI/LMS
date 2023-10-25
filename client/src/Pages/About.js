@@ -10,15 +10,15 @@ import steveJobs from "../Assets/Images/QuotesPersonalityImage/steveJobs.png";
 const About = () => {
   return (
     <Layout>
-      <div className="pl-20 pt-10 flex flex-col text-white">
+      <div className="pl-20 pt-10 flex flex-col text-[#ff7070]">
         {/* creating the about page main section */}
         <div className="flex items-center gap-5 mx-10">
           {/* out moto section */}
           <section className="w-1/2 space-y-10">
-            <h1 className="text-5xl text-yellow-500 font-semibold">
-              Affordable and Quality Education
+            <h1 className="text-5xl text-[#ff7070] font-semibold">
+              Affordable and Quality Education.
             </h1>
-            <p className="text-xl text-gray-200">
+            <p className="text-xl text-[#0095ff]">
               Our goal is to provide the affordable and quality education to the
               world. We are providing the platform for the aspiring teachers and
               students to share their creativity, skills and knowledge to each
@@ -52,7 +52,7 @@ const About = () => {
                 alt="Nelson Mandela"
               />
               {/* for writting the quotes */}
-              <p className="text-xl text-gray-200">
+              <p className="text-xl text-[#0095ff]">
                 "Education is the most powerful tool you can use to change the
                 world."
               </p>
@@ -78,7 +78,7 @@ const About = () => {
                 alt="APJ Abdul Kalam"
               />
               {/* for writting the quotes */}
-              <p className="text-xl text-gray-200">
+              <p className="text-xl text-[#0095ff]">
                 "Learning gives creativity, creativity leads to thinking,
                 thinking provides knowledge, knowledge makes you great."
               </p>
@@ -104,7 +104,7 @@ const About = () => {
                 alt="einstein"
               />
               {/* for writting the quotes */}
-              <p className="text-xl text-gray-200">
+              <p className="text-xl text-[#0095ff]">
                 "Education is not the learning of facts, but the training of the
                 mind to think."
               </p>
@@ -130,7 +130,7 @@ const About = () => {
                 alt="Steve Jobs"
               />
               {/* for writting the quotes */}
-              <p className="text-xl text-gray-200">
+              <p className="text-xl text-[#0095ff]">
                 "Innovation distinguishes between a leader and a follower."
               </p>
               {/* for personality name */}
@@ -155,7 +155,7 @@ const About = () => {
                 alt="Bill Gates"
               />
               {/* for writting the quotes */}
-              <p className="text-xl text-gray-200">
+              <p className="text-xl text-[#0095ff]">
                 "Technology is just a tool. In terms of getting the kids working
                 together and motivating them, the teacher is the most
                 important."

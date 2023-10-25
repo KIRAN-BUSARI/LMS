@@ -60,7 +60,7 @@ const Contact = () => {
       <div className="flex items-center justify-center h-[100vh]">
         <form
           onSubmit={handleFormSubmit}
-          className="flex flex-col items-center justify-center gap-2 p-5 rounded-md text-white shadow-[0_0_10px_black] w-[22rem]"
+          className="flex flex-col items-center justify-center gap-2 p-5 rounded-md text-[#0095ff] shadow-[0_0_10px_black] w-[22rem]"
         >
           <h1 className="text-3xl font-semibold">Contact Form</h1>
           <div className="flex flex-col w-full gap-1">
@@ -108,7 +108,7 @@ const Contact = () => {
           </div>
 
           <button
-            className="w-full bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold text-lg cursor-pointer"
+            className="w-full bg-slate-300 hover:bg-slate-400 text-[#ff3535] transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold text-lg cursor-pointer"
             type="submit"
           >
             Submit
