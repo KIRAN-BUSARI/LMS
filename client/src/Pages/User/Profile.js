@@ -30,7 +30,7 @@ const Profile = () => {
             alt="user profile img"
           />
 
-          <h3 className="text-xl font-semibold text-center capitalize font-bold">
+          <h3 className="text-xl text-center capitalize font-bold">
             {userData.fullName}
           </h3>
 
