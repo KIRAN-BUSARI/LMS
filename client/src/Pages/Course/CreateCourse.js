@@ -123,7 +123,7 @@ const CreateCourse = () => {
         {/* card for creating the new card */}
         <form
           onSubmit={handleFormSubmit}
-          className="flex flex-col justify-center gap-5 rounded-lg p-4 text-white w-[700px] h-[450px] my-10 shadow-[0_0_10px_black] relative"
+          className="flex flex-col justify-center gap-5 rounded-lg p-4 text-[#0095ff] w-[700px] h-[450px] my-10 shadow-[0_0_10px_black] relative"
         >
           <Link
             to={"/admin/dashboard"}
@@ -249,7 +249,7 @@ const CreateCourse = () => {
           </main>
 
           <button
-            className="w-full bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold text-lg cursor-pointer"
+            className="w-full text-white bg-[#0095ff] hover:bg-[#117ecb] transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold text-lg cursor-pointer"
             type="submit"
           >
             {!initialCourseData.newCourse ? "Update Course" : "Create Course"}

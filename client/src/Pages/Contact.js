@@ -68,7 +68,7 @@ const Contact = () => {
               Name
             </label>
             <input
-              className="bg-transparent border px-2 py-1 rounded-sm"
+              className="bg-transparent border px-2 py-1 rounded-sm text-[#ff7070]"
               id="name"
               type="text"
               name="name"
@@ -83,7 +83,7 @@ const Contact = () => {
               Email
             </label>
             <input
-              className="bg-transparent border px-2 py-1 rounded-sm"
+              className="bg-transparent border px-2 py-1 rounded-sm text-[#ff7070]"
               id="email"
               type="email"
               name="email"
@@ -98,7 +98,7 @@ const Contact = () => {
               Message
             </label>
             <textarea
-              className="bg-transparent border px-2 py-1 rounded-sm resize-none h-40"
+              className="bg-transparent border px-2 py-1 rounded-sm resize-none h-40 text-[#ff7070]"
               name="message"
               id="message"
               placeholder="Enter your message"
@@ -108,7 +108,7 @@ const Contact = () => {
           </div>
 
           <button
-            className="w-full bg-slate-300 hover:bg-slate-400 text-[#ff3535] transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold text-lg cursor-pointer"
+            className="w-full bg-[#0095ff] hover:bg-[#53b7ff] text-[#ff3535] transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold text-lg cursor-pointer"
             type="submit"
           >
             Submit

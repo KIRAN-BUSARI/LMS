@@ -132,8 +132,8 @@ const AdminDashboard = () => {
 
   return (
     <Layout>
-      <div className="min-h-[90vh] pt-5 flex flex-col flex-wrap gap-10 text-white">
-        <h1 className="text-center text-3xl font-semibold text-yellow-500">
+      <div className="min-h-[90vh] pt-5 flex flex-col flex-wrap gap-10 text-[#0095ff]">
+        <h1 className="text-center text-3xl font-semibold text-[#0095ff]">
           Admin Dashboard
         </h1>
         {/* creating the records card and chart for sales and user details */}
@@ -180,7 +180,9 @@ const AdminDashboard = () => {
               <div className="flex items-center justify-between py-5 px-5 gap-5 rounded-md shadow-md">
                 <div className="flex flex-col items-center">
                   <p className="font-semibold">Subscriptions Count</p>
-                  <h3 className="text-4xl font-bold">{successPayments?.count}</h3>
+                  <h3 className="text-4xl font-bold">
+                    {successPayments?.count}
+                  </h3>
                 </div>
                 <FcSalesPerformance className="text-yellow-500 text-5xl" />
               </div>
@@ -202,7 +204,7 @@ const AdminDashboard = () => {
         {/* CRUD courses section */}
         <div className="mx-[10%] w-[80%] self-center flex flex-col items-center justify-center gap-10 mb-10">
           <div className="flex w-full items-center justify-between">
-            <h1 className="text-center text-3xl font-semibold">
+            <h1 className="text-center text-3xl font-semibold text-[#0095ff]">
               Courses Overview
             </h1>
 
@@ -223,7 +225,7 @@ const AdminDashboard = () => {
                   },
                 });
               }}
-              className="w-fit bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 rounded py-2 px-4 font-semibold text-lg cursor-pointer"
+              className="w-fit bg-[#0095ff] text-white hover:bg-white hover:text-[#0095ff] border border-[#0095ff] transition-all ease-in-out duration-300 rounded py-2 px-4 font-semibold text-lg cursor-pointer"
             >
               Create New Course
             </button>
@@ -278,7 +280,7 @@ const AdminDashboard = () => {
                             },
                           })
                         }
-                        className="bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 text-xl py-2 px-4 rounded-md font-bold"
+                        className="bg-[#0095ff] text-white hover:bg-[#117ecb] transition-all ease-in-out duration-300 text-xl py-2 px-4 rounded-md font-bold"
                       >
                         <MdOutlineModeEdit />
                       </button>
@@ -286,7 +288,7 @@ const AdminDashboard = () => {
                       {/* to delete the course */}
                       <button
                         onClick={() => handleCourseDelete(element._id)}
-                        className="bg-red-500 hover:bg-red-600 transition-all ease-in-out duration-30 text-xl py-2 px-4 rounded-md font-bold"
+                        className="bg-red-500 hover:bg-red-600 text-white transition-all ease-in-out duration-30 text-xl py-2 px-4 rounded-md font-bold"
                       >
                         <BsTrash />
                       </button>
@@ -298,7 +300,7 @@ const AdminDashboard = () => {
                             state: { ...element },
                           })
                         }
-                        className="bg-green-500 hover:bg-green-600 transition-all ease-in-out duration-30 text-xl py-2 px-4 rounded-md font-bold"
+                        className="bg-green-500 hover:bg-green-600 text-white transition-all ease-in-out duration-30 text-xl py-2 px-4 rounded-md font-bold"
                       >
                         <BsCollectionPlayFill />
                       </button>
@@ -312,8 +314,9 @@ const AdminDashboard = () => {
 
         <div className="mx-[10%] w-[80%] self-center flex flex-col items-center justify-center gap-10 mb-10">
           <div className="flex w-full items-center justify-between">
-            <h1 className="text-center text-3xl font-semibold">
-              Join Communities You <span className="text-yellow-500">Love...</span>
+            <h1 className="text-center text-3xl font-semibold text-[#0095ff]">
+              Join Communities You{" "}
+              <span className="text-[#ff7070]">Love...</span>
             </h1>
 
             {/* add course card */}
@@ -332,7 +335,7 @@ const AdminDashboard = () => {
                   },
                 });
               }}
-              className="w-fit bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 rounded py-2 px-4 font-semibold text-lg cursor-pointer"
+              className="w-fit bg-[#0095ff] text-white hover:bg-white hover:text-[#0095ff] border border-[#0095ff] transition-all ease-in-out duration-300 rounded py-2 px-4 font-semibold text-lg cursor-pointer"
             >
               Create New Community
             </button>
@@ -383,7 +386,7 @@ const AdminDashboard = () => {
                             },
                           })
                         }
-                        className="bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 text-xl py-2 px-4 rounded-md font-bold"
+                        className="bg-[#0095ff] text-white hover:bg-[#117ecb] transition-all ease-in-out duration-300 text-xl py-2 px-4 rounded-md font-bold"
                       >
                         <MdOutlineModeEdit />
                       </button>
@@ -391,7 +394,7 @@ const AdminDashboard = () => {
                       {/* to delete the Community */}
                       <button
                         onClick={() => handleCommunityDelete(element._id)}
-                        className="bg-red-500 hover:bg-red-600 transition-all ease-in-out duration-30 text-xl py-2 px-4 rounded-md font-bold"
+                        className="bg-red-500 hover:bg-red-600 text-white transition-all ease-in-out duration-30 text-xl py-2 px-4 rounded-md font-bold"
                       >
                         <BsTrash />
                       </button>
@@ -403,7 +406,7 @@ const AdminDashboard = () => {
                             state: { ...element },
                           })
                         }
-                        className="bg-green-500 hover:bg-green-600 transition-all ease-in-out duration-30 text-xl py-2 px-4 rounded-md font-bold"
+                        className="bg-green-500 hover:bg-green-600 text-white transition-all ease-in-out duration-30 text-xl py-2 px-4 rounded-md font-bold"
                       >
                         <BsCollectionPlayFill />
                       </button>
